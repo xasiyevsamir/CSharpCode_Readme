@@ -249,7 +249,20 @@ namespace LINQ
 
             #endregion
 
+            #region 10.Quantifiers (Kəmiyyət göstəriciləri)
 
+            //  10.Aggregation (Toplama Əməliyyatları)
+            //-----------------------------------------------------------------------------------
+
+            // 10.1 Any()                 --> Any() metodu kolleksiyada element olub-olmadığını yoxlamaq üçün istifadə olunur.
+            // 10.2 All()	              --> All() metodu kolleksiyadakı bütün elementlərin müəyyən bir şərtə uyğun olub-olmadığını yoxlayır.
+            // 10.3 Contains()            --> Bir kolleksiyada (List<T>, Array<T>, DbSet<T>) müəyyən bir dəyərin olub-olmadığını yoxlayır.
+            // 10.4 SequenceEqual()       --> İki kolleksiyanı müqayisə edir və onların elementlərinin sırasıyla eyni olub-olmadığını yoxlayır.
+
+
+            //-------------------------------------------------------------------------------------
+
+            #endregion
 
         }
 
