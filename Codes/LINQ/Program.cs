@@ -1,8 +1,4 @@
 ﻿using LINQ.DAL;
-using LINQ.Entities;
-using Microsoft.EntityFrameworkCore;
-using System.Reflection;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace LINQ
 {
