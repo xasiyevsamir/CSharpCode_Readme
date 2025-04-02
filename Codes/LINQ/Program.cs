@@ -1,4 +1,6 @@
 ﻿using LINQ.DAL;
+using Microsoft.EntityFrameworkCore;
+using System.Text.RegularExpressions;
 
 namespace LINQ
 {
@@ -169,7 +171,7 @@ namespace LINQ
             // 7.2 Except()	         --> Birinci kolleksiyada olub, ikinci kolleksiyada olmayanları qaytarır
             // 7.3 Union()           --> Hər iki kolleksiyanı birləşdirir və unikal elementləri qaytarır
             // 7.4 Concat()          --> Hər iki kolleksiyanı birləşdirir, lakin təkrarlananları saxlayır
-
+            // 7.5 Distinct()        --> Bu metod, kolleksiyanı əsaslanaraq müqayisə edir və yalnız fərqli olanları qaytarır.
             //-------------------------------------------------------------------------------------
 
             #endregion
@@ -187,6 +189,7 @@ namespace LINQ
             // 8.6 LastOrDefault()       --> Şərtə uyğun sonuncu elementi qaytarır, tapılmazsa null qaytarır
             // 8.7 ElementAt()           --> Verilmiş index-dəki elementi qaytarır, əgər indeks aralıqdan kənardadırsa xəta atır
             // 8.8 ElementAtOrDefault()  --> Verilmiş index-dəki elementi qaytarır, əgər indeks aralıqdan kənardadırsa null və ya default qaytarır
+            // 8.9 DefaultIfEmpty()      --> Boş kolleksiya olduqda, default (standart) dəyər əlavə edir.
 
             // 8.1
             //Group group= linqDbContext.Groups.First(g=>g.Id>5000);
@@ -199,6 +202,20 @@ namespace LINQ
             // Console.WriteLine(lastEmployee.Last());
 
             //var thirdEmployee = linqDbContext.Groups.OrderBy(e => e.Id).ElementAt(2);           
+
+            // var groupResults = linqDbContext.Groups
+            //.GroupBy(s => s.Id)
+            //.Select(g => new { Id = g.Key, GroupCount = g.Count() })
+            //.DefaultIfEmpty(); // ✅ SQL Query-yə çevrilə bilər
+
+            // Console.WriteLine(groupResults.ToQueryString());
+
+            // Console.WriteLine("====================");
+
+            // foreach (var item in groupResults)
+            // {
+            //     Console.WriteLine(item);
+            // }
 
             //-------------------------------------------------------------------------------------
 
