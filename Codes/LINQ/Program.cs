@@ -8,7 +8,7 @@ namespace LINQ
     {
         static void Main(string[] args)
         {
-            LinqDbContext linqDbContext = new LinqDbContext();
+           // LinqDbContext linqDbContext = new LinqDbContext();
 
             // LINQ Methodlar
 
@@ -145,7 +145,7 @@ namespace LINQ
             // 6.6 AsQueryable()    --> IEnumerable<T>-i IQueryable<T>-ə çevirir
             // 6.7 Cast<T>()        --> Kolleksiyanın bütün elementlərini T tipinə çevirir
             // 6.8 OfType<T>()      --> Müəyyən tipə uyğun elementləri seçir
-
+            // 6.9 Prepend()()      --> Prepend() metodu verilənlər kolleksiyasının əvvəlinə yeni bir element əlavə edir.
 
 
             // 6.2 ToList()                    
@@ -172,6 +172,15 @@ namespace LINQ
             // 7.3 Union()           --> Hər iki kolleksiyanı birləşdirir və unikal elementləri qaytarır
             // 7.4 Concat()          --> Hər iki kolleksiyanı birləşdirir, lakin təkrarlananları saxlayır
             // 7.5 Distinct()        --> Bu metod, kolleksiyanı əsaslanaraq müqayisə edir və yalnız fərqli olanları qaytarır.
+
+
+            // 7.5 Distinct()
+            //var distinct= linqDbContext.Groups.Select(g => g.Name).Distinct();
+
+            //foreach (var item in distinct)
+            //{
+            //    Console.WriteLine(item);
+            //}
             //-------------------------------------------------------------------------------------
 
             #endregion
@@ -233,7 +242,7 @@ namespace LINQ
             // 9.5 Average()        --> Rəqəmsal verilənlərin orta qiymətini qaytarır.
             // 9.6 Aggregate()      --> İstifadəçinin təyin etdiyi xüsusi bir funksiyaya əsasən toplama əməliyyatı icra edir.
             // 9.7 LongCount()      --> Count() metodu kimi işləyir, lakin long tipində nəticə qaytarır.
-
+            // 9.8 MinBy()          --> MinBy() metodu verilənlər kolleksiyasında hər hansı bir şərtə əsasən ən kiçik elementi seçir.
 
             // 9.1 Count()
 
@@ -261,6 +270,11 @@ namespace LINQ
             //Console.WriteLine(average);
 
 
+            // 9.8 MinBy()
+
+            //var minGroup = linqDbContext.Groups.ToList()
+            //.MinBy(g => g.Name.Length);
+            //Console.WriteLine(minGroup.Name);
 
             //-------------------------------------------------------------------------------------
 
@@ -275,6 +289,20 @@ namespace LINQ
             // 10.2 All()	              --> All() metodu kolleksiyadakı bütün elementlərin müəyyən bir şərtə uyğun olub-olmadığını yoxlayır.
             // 10.3 Contains()            --> Bir kolleksiyada (List<T>, Array<T>, DbSet<T>) müəyyən bir dəyərin olub-olmadığını yoxlayır.
             // 10.4 SequenceEqual()       --> İki kolleksiyanı müqayisə edir və onların elementlərinin sırasıyla eyni olub-olmadığını yoxlayır.
+
+
+            //-------------------------------------------------------------------------------------
+
+            #endregion
+
+            #region 11.Generation (Yaradıcı)
+
+            //  11.Generation (Yaradıcı)
+            //-----------------------------------------------------------------------------------
+
+            // 11.1 Repeat()       --> Bir elementi müəyyən sayda təkrarlayaraq yeni bir kolleksiya yaradır.
+            // 11.2 Range()	       --> Müəyyən başlanğıc (start) və uzunluq (count) verilərək ardıcıl tam ədədlər yaradır.
+            // 11.3 Empty()        --> Boş bir IEnumerable<T> kolleksiyası qaytarır.
 
 
             //-------------------------------------------------------------------------------------
