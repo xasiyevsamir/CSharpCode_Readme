@@ -8,7 +8,7 @@ namespace CodeFirst
         {
             StudentDetail studentDetail = new StudentDetail();
             studentDetail.Email="test@gmail.com";
-            studentDetail.Student.Name = "Test";
+            studentDetail.Student.Name = "Test";          
         }
     }
 }
