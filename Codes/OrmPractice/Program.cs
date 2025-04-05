@@ -1,4 +1,5 @@
-﻿using OrmPractice.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using OrmPractice.Data;
 using OrmPractice.Entities;
 namespace OrmPractice
 {
@@ -42,16 +43,27 @@ namespace OrmPractice
             //Console.WriteLine(groupfind.Name);
             #endregion
 
-            #region 2.ORM ilə Single methodu yazmaq.
+            #region 6.ORM ilə Single methodu yazmaq.
             // ORM ilə Single methodu yazmaq.
-            var groupfind = dbContext.Groups.First(g=>g.Id==2002);//Burada 2002 Id-dir.
-            Console.WriteLine(groupfind.Name);
-
-            var groupfind1 = dbContext.Groups.Single(g => g.Id == 2002);//Burada 2002 Id-dir.
-            Console.WriteLine(groupfind1.Name);
+            //var groupSingle = dbContext.Groups.Single(g=>g.Id==2002);//Burada 2002 Id-dir.
+            //Console.WriteLine(groupSingle.Name);
             #endregion
 
+            #region 7.ORM ilə Remove methodu yazmaq.
+            // ORM ilə Remove methodu yazmaq.
+            //var groupRemove = dbContext.Groups.SingleOrDefault(g => g.Id == 2003);//Burada 2002 Id-dir.
+            //dbContext.Groups.Remove(groupRemove);
+            //dbContext.SaveChanges();
+            #endregion
 
+            #region 8.ORM ilə SaveChanges methodu yazmaq.
+            // ORM ilə SaveChanges methodu yazmaq.
+            var group = dbContext.Groups.SingleOrDefault(g => g.Id == 2002);//Burada 2002 Id-dir.
+            var data = dbContext.ChangeTracker.Entries();
+            dbContext.SaveChanges();
+            #endregion
+
+            EntityState
         }
     }
 }
