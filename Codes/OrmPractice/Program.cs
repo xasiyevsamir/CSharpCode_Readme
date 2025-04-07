@@ -1,6 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using OrmPractice.Data;
-using OrmPractice.Entities;
+﻿using OrmPractice.Data;
 namespace OrmPractice
 {
     internal class Program
