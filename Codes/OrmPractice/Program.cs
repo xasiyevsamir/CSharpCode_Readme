@@ -1,5 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using OrmPractice.Data;
+using OrmPractice.Entities;
+using OrmPractice.Enum;
+using System.Globalization;
 namespace OrmPractice
 {
     internal class Program
@@ -8,6 +11,7 @@ namespace OrmPractice
         {
             OrmDbContext dbContext = new OrmDbContext();
 
+            Console.OutputEncoding = System.Text.Encoding.UTF8;
 
             #region 1.ORM ilə Data Add etmək
             // ORM ilə Data Add etmək..
@@ -73,13 +77,95 @@ namespace OrmPractice
 
             #region 9.ORM ilə CanConnect methodu yazmaq.
             // ORM ilə CanConnect methodu yazmaq.
-           
+
             //if (dbContext.Database.CanConnect())
             //{
             //    Console.WriteLine("qosulub");
             //}
             #endregion
 
+            #region 10.ORM ilə AddRange methodu yazmaq.
+            // ORM ilə AddRange methodu yazmaq.
+
+            //Group groupPB500 = new Group() 
+            //{ 
+            //    Name = "PB500", 
+            //    MinCount = 22,
+            //    MaxCount=50, 
+            //    ActivCount=23,
+            //    StartDate = DateTime.Now.AddMonths(1),
+            //    EndDate =DateTime.Now.AddMonths(7),                
+            //};
+
+            //Group groupPB501 = new Group()
+            //{
+            //    Name = "PB501",
+            //    MinCount = 22,
+            //    MaxCount = 50,
+            //    ActivCount = 23,
+            //    StartDate = DateTime.Now.AddMonths(2),
+            //    EndDate = DateTime.Now.AddMonths(8),
+            //};
+
+            //dbContext.Groups.AddRange(groupPB500, groupPB501);
+            //dbContext.SaveChanges();
+
+            //Student studentHesen = new Student()
+            //{
+            //    Name = "Hesen",
+            //    Surname = "Sariyev",
+            //    Age = 24,
+            //    Gender = Gender.Male,
+            //    GroupId = 1002
+            //};
+            //Student studentNigar = new Student()
+            //{
+            //    Name = "Nigar",
+            //    Surname = "Ağalarova",
+            //    Age = 14,
+            //    Gender = Gender.Female,
+            //    GroupId = 1003
+            //};
+
+            //dbContext.Students.AddRange(studentHesen, studentNigar);
+            //dbContext.SaveChanges();
+            #endregion
+
+            #region 11.ORM ilə Include methodu yazmaq.
+            // ORM ilə Include methodu yazmaq.
+
+            // List<Student> students=dbContext.Students.AsNoTracking().Include(g=>g.Group).ToList();
+
+            //foreach (var student in students)
+            //{
+            //    Console.WriteLine(student);
+            //}
+
+
+
+            //List<Group> groups=dbContext.Groups.AsNoTracking().Include(g=>g.Students).ToList();
+            //foreach (var group in groups)
+            //{
+            //    Console.WriteLine(group);
+            //    foreach (var student in group.Students)
+            //     Console.WriteLine(student);
+            //    Console.WriteLine("=========================");
+            //}
+
+            //List<Detail> details = dbContext.Details.AsNoTracking()
+            //    .Include(g => g.Student)
+            //    .ThenInclude(s=>s.Group)
+            //    .ToList();
+     
+            //foreach (var detail in details)
+            //{
+            //    Console.WriteLine(detail.Student.Name);
+            //    Console.WriteLine(detail.Student.Group.Name);
+            //    Console.WriteLine(detail);             
+                
+            //}
+
+            #endregion
         }
     }
 }
