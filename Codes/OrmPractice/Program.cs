@@ -1,4 +1,5 @@
-﻿using OrmPractice.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using OrmPractice.Data;
 namespace OrmPractice
 {
     internal class Program
@@ -56,12 +57,29 @@ namespace OrmPractice
 
             #region 8.ORM ilə SaveChanges methodu yazmaq.
             // ORM ilə SaveChanges methodu yazmaq.
-            var group = dbContext.Groups.SingleOrDefault(g => g.Id == 2002);//Burada 2002 Id-dir.
-            var data = dbContext.ChangeTracker.Entries();
-            dbContext.SaveChanges();
+            //var group = dbContext.Groups.SingleOrDefault(g => g.Id == 2002);//Burada 2002 Id-dir.
+            //group.Name = "Samir";
+            //var data = dbContext.ChangeTracker.Entries(); // Nə qədər table varsa State göstərir
+            //var data1 = dbContext.Entry(group).State;     // Yalnız təyin etdiyimiz table State göstərir
+
+
+            //Qeyd: Əgər gətirilən data üzərində hec bir dəyişiklik etmiriksə izləməni dayandırırıq
+
+            //var groups = dbContext.Groups.AsNoTracking().ToList();
+            // var data = dbContext.ChangeTracker.Entries(); // İzləmə dayanıb.
+
+            //dbContext.SaveChanges();
             #endregion
 
+            #region 9.ORM ilə CanConnect methodu yazmaq.
+            // ORM ilə CanConnect methodu yazmaq.
            
+            //if (dbContext.Database.CanConnect())
+            //{
+            //    Console.WriteLine("qosulub");
+            //}
+            #endregion
+
         }
     }
 }
