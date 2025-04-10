@@ -48,7 +48,7 @@ namespace OrmPractice
 
             #region 6.ORM ilə Single methodu yazmaq.
             // ORM ilə Single methodu yazmaq.
-            //var groupSingle = dbContext.Groups.Single(g=>g.Id==2002);//Burada 2002 Id-dir.
+            // var groupSingle = dbContext.Groups.Single(g=>g.Id==2002);//Burada 2002 Id-dir.
             //Console.WriteLine(groupSingle.Name);
             #endregion
 
@@ -134,7 +134,7 @@ namespace OrmPractice
             #region 11.ORM ilə Include methodu yazmaq.
             // ORM ilə Include methodu yazmaq.
 
-            // List<Student> students=dbContext.Students.AsNoTracking().Include(g=>g.Group).ToList();
+            //List<Student> students=dbContext.Students.AsNoTracking().Include(g=>g.Group).ToList();
 
             //foreach (var student in students)
             //{
@@ -156,16 +156,35 @@ namespace OrmPractice
             //    .Include(g => g.Student)
             //    .ThenInclude(s=>s.Group)
             //    .ToList();
-     
+
             //foreach (var detail in details)
             //{
             //    Console.WriteLine(detail.Student.Name);
             //    Console.WriteLine(detail.Student.Group.Name);
             //    Console.WriteLine(detail);             
-                
+
+            //}
+
+            #endregion
+
+            #region 12.ORM ilə ThenInclude methodu yazmaq.
+            // ORM ilə ThenInclude methodu yazmaq.          
+
+            //List<Detail> details = dbContext.Details.AsNoTracking()
+            //    .Include(g => g.Student)
+            //    .ThenInclude(s=>s.Group)
+            //    .ToList();
+
+            //foreach (var detail in details)
+            //{
+            //    Console.WriteLine(detail.Student.Name);
+            //    Console.WriteLine(detail.Student.Group.Name);
+            //    Console.WriteLine(detail);             
+
             //}
 
             #endregion
         }
     }
+    
 }
