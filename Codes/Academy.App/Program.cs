@@ -1,14 +1,23 @@
 ﻿using Academy.App.Controllers;
-using Academy.Service.Services;
 
 namespace Academy.App
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
+            GroupController groupController = new GroupController();
             StudentController studentController = new StudentController();
-            studentController.StudentCreate();
+            // await groupController.Create();
+
+            // await groupController.GetAll();
+
+            //  await groupController.GetAllWithNoAsync();
+
+            //  await  studentController.StudentCreate();
+
+              await  studentController.StudentUpdateAsync();
+
         }
     }
 }

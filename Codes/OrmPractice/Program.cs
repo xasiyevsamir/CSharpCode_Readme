@@ -1,8 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using OrmPractice.Data;
-using OrmPractice.Entities;
-using OrmPractice.Enum;
-using System.Globalization;
+﻿using OrmPractice.Data;
 namespace OrmPractice
 {
     internal class Program
@@ -184,7 +180,10 @@ namespace OrmPractice
             //}
 
             #endregion
+
+
+
         }
     }
-    
+
 }

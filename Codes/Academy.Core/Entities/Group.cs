@@ -9,5 +9,10 @@
         public DateTime CreateDate { get; set; }
 
         public List<Student> Students { get; set; }
+
+        public override string ToString()
+        {
+            return $"No: {No} Limit:{Limit}  DateTime:{CreateDate}";
+        }
     }
 }

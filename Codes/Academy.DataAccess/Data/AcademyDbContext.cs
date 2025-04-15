@@ -6,9 +6,9 @@ namespace Academy.DataAccess.Data
     public class AcademyDbContext:DbContext
     {
 
-        DbSet<Student> Students { get; set; }
+      public  DbSet<Student> Students { get; set; }
 
-        DbSet<Group> Groups { get; set; }
+      public  DbSet<Group> Groups { get; set; }
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
