@@ -1,4 +1,5 @@
 ﻿using Academy.Core.Entities;
+using Academy.DataAccess.Data.Configurations;
 using Microsoft.EntityFrameworkCore;
 
 namespace Academy.DataAccess.Data
@@ -14,6 +15,11 @@ namespace Academy.DataAccess.Data
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer("Server=.; Database=AcademyDb; User=sa; Password=Salam123;TrustServerCertificate=True");
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(StudentConfiguration).Assembly);
         }
     }
 }

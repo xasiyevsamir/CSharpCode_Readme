@@ -1,4 +1,5 @@
 ﻿using Academy.App.Controllers;
+using Microsoft.EntityFrameworkCore;
 
 namespace Academy.App
 {
@@ -17,6 +18,7 @@ namespace Academy.App
             //  await  studentController.StudentCreate();
 
               await  studentController.StudentUpdateAsync();
+            
 
         }
     }
