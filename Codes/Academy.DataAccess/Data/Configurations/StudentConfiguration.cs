@@ -1,8 +1,6 @@
 ﻿using Academy.Core.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System.Net;
-
 namespace Academy.DataAccess.Data.Configurations
 {
     internal class StudentConfiguration : IEntityTypeConfiguration<Student>

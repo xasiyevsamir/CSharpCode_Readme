@@ -4,6 +4,8 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello, World!");
+        int value = 43; // burada value bir variable-dır.
+
+        Console.WriteLine(value);
     }
 }

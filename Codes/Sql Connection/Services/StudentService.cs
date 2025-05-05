@@ -131,7 +131,6 @@ namespace Sql_Connection.Services
             using SqlCommand sqlcommand = new SqlCommand(query, connection);
             sqlcommand.Parameters.AddWithValue("@name", (object?)student.Name ?? DBNull.Value);
             sqlcommand.Parameters.AddWithValue("@surname", (object?)student.Surname ?? DBNull.Value);
-            sqlcommand.Parameters.AddWithValue("@id", id);
 
             if (sqlcommand.ExecuteNonQuery() > 0)
                 Console.WriteLine("Updated");
