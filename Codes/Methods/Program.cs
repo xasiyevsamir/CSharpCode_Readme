@@ -55,7 +55,7 @@ namespace Methods
 
             //int[] ints = new int[] { -10, 20, -5, 30 };
 
-            //MakePositive(ref ints);                    // -- argument
+            //MakePositive(ref ints);                    // -- arguments
             //for (int i = 0; i < ints.Length; i++)
             //{
             //    Console.WriteLine(ints[i]);
@@ -63,9 +63,9 @@ namespace Methods
 
 
 
-            string text = "Hello World";
-            ChangeStr(text);
-            Console.WriteLine(text);
+            //string text = "Hello World";
+            //ChangeStr(text);                   // -- argument
+            //Console.WriteLine(text);
 
 
 
