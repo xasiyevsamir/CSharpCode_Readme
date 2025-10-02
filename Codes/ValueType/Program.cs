@@ -3,7 +3,7 @@
     internal class Program
     {
         static void Main(string[] args)
-        {
+        {      
             string str = "123.45";
             // string tipli dəyişən yaradılır, dəyəri "123.45"
 
